@@ -559,7 +559,7 @@ cephFileSystems:
             memory: "4Gi"
         priorityClassName: system-cluster-critical
     storageClass:
-      enabled: false
+      enabled: true
       isDefault: false
       name: ceph-filesystem
       # (Optional) specify a data pool to use, must be the name of one of the data pools above, 'data0' by default
@@ -567,7 +567,8 @@ cephFileSystems:
       reclaimPolicy: Delete
       allowVolumeExpansion: true
       volumeBindingMode: "Immediate"
-      annotations: {}
+      annotations:
+        cdi.harvesterhci.io/storageProfileVolumeModeAccessModes: '{"Filesystem":["ReadWriteMany"]}'
       labels: {}
       mountOptions: []
       # see https://github.com/rook/rook/blob/master/Documentation/Storage-Configuration/Shared-Filesystem-CephFS/filesystem-storage.md#provision-storage for available configuration
@@ -648,11 +649,12 @@ cephObjectStores:
         #       cpu: "100m"
         #       memory: "40Mi"
     storageClass:
-      enabled: false
+      enabled: true
       name: ceph-bucket
       reclaimPolicy: Delete
       volumeBindingMode: "Immediate"
-      annotations: {}
+      annotations:
+        cdi.harvesterhci.io/storageProfileVolumeModeAccessModes: '{"Block":["ReadWriteMany"]}'
       labels: {}
       # see https://github.com/rook/rook/blob/master/Documentation/Storage-Configuration/Object-Storage-RGW/ceph-object-bucket-claim.md#storageclass for available configuration
       parameters:
