@@ -4,4 +4,4 @@ helm:
   chart: rook-ceph
   version: "v1.13.0"
   valuesFiles:
-    - operator-values.yaml
+    - rook-operator-values.yaml
