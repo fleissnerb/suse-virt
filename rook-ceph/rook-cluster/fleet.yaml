@@ -8,4 +8,4 @@ helm:
   version: "v1.13.0"
   # Reference your file here:
   valuesFiles:
-    - cluster-values.yaml
+    - rook-cluster-values.yaml
