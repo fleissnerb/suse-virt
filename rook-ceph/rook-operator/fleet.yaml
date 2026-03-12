@@ -4,9 +4,5 @@ helm:
   chart: rook-ceph
   version: "v1.19.2"
 values:
-    cephClusterSpec:
-      mon:
-        allowMultiplePerNode: true
-      # You can add more overrides as needed:
-      storage:
-        useAllNodes: true
+  monitoring:
+    enabled: true
