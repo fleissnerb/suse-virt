@@ -1,1 +1,11 @@
-
+defaultNamespace: rook-ceph
+dependsOn:
+  - selector:
+      fleet.cattle.io/bundle-directory: rook-operator
+helm:
+  repo: https://charts.rook.io/release
+  chart: rook-ceph-cluster
+  version: "v1.13.0"
+  # Reference your file here:
+  valuesFiles:
+    - cluster-values.yaml
