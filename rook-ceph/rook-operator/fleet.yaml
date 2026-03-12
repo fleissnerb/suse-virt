@@ -1,1 +1,7 @@
-
+defaultNamespace: rook-ceph
+helm:
+  repo: https://charts.rook.io/release
+  chart: rook-ceph
+  version: "v1.13.0"
+  valuesFiles:
+    - operator-values.yaml
