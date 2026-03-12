@@ -3,6 +3,5 @@ helm:
   repo: https://charts.rook.io/release
   chart: rook-ceph
   version: "v1.19.2"
-values:
-  monitoring:
-    enabled: true
+  valuesFiles:
+    - rook-operator-values.yaml
