@@ -3,5 +3,10 @@ helm:
   repo: https://charts.rook.io/release
   chart: rook-ceph
   version: "v1.19.2"
-  valuesFiles:
-    - rook-operator-values.yaml
+values:
+    cephClusterSpec:
+      mon:
+        allowMultiplePerNode: true
+      # You can add more overrides as needed:
+      storage:
+        useAllNodes: true
